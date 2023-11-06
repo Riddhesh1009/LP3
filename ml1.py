@@ -53,8 +53,9 @@ lrmodel.fit(x_train, y_train)
 
 predict = lrmodel.predict(x_test)
 
-from sklearn.metrics import mean_squared_error
+from sklearn.metrics import mean_squared_error,r2_score
 lrmodelrmse = np.sqrt(mean_squared_error(predict, y_test))
+print("R2 score is",r2_score(predict, y_test))
 print("RMSE error for the model is ", lrmodelrmse)
 
 from sklearn.ensemble import RandomForestRegressor
@@ -64,4 +65,5 @@ rfrmodel.fit(x_train, y_train)
 rfrmodel_pred = rfrmodel.predict(x_test)
 
 rfrmodel_rmse = np.sqrt(mean_squared_error(rfrmodel_pred, y_test))
+print("R2 score is",r2_score(rfrmodel_pred, y_test))
 print("RMSE value for Random Forest is:",rfrmodel_rmse)
